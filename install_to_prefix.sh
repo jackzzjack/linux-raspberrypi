@@ -3,7 +3,9 @@ KERNEL=kernel7
 
 export PATH=../tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/:$PATH
 
-# make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=prefix/modules modules_install
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=prefix/modules modules_install
+
+mkdir prefix
 
 cp arch/arm/boot/zImage prefix/
 scripts/mkknlimg arch/arm/boot/zImage prefix/$KERNEL.img
